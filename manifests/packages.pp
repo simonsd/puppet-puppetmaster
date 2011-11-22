@@ -1,10 +1,12 @@
 class puppetmaster::packages {
-	package { "puppet-server":
-		ensure => installed,
+	package {
+		'puppetmaster':
+			name => 'puppet-server';
 	}
 
-	service { "puppetmaster":
-		ensure => running,
-		enable => true,
+	service {
+		'puppetmaster':
+			ensure => running,
+			enable => true;
 	}
 }
