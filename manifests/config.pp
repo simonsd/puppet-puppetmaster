@@ -1,9 +1,9 @@
 class puppetmaster::config {
-	file { "/etc/puppet/autosign.conf":
-		ensure => present,
-		owner => root,
-		group => root,
-		mode => 0644,
-		source => "puppet:///config/autosign",
+	file {
+		'/etc/puppet/autosign.conf':
+			owner => root,
+			group => root,
+			mode => 0644,
+			source => template('puppet/autosign.conf.erb');
 	}
 }
