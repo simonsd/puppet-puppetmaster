@@ -1,7 +1,7 @@
 class puppetmaster::service {
-	service {
-		'puppetmaster':
-			ensure => running,
-			enable => true;
-	}
+  service {
+    'puppetmaster':
+      ensure => running,
+      enable => true;
+  }
 }
