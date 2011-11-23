@@ -4,6 +4,6 @@ class puppetmaster::config {
       owner => root,
       group => root,
       mode => 0644,
-      source => template('puppet/autosign.conf.erb');
+      content => template('puppetmaster/autosign.conf.erb');
   }
 }
