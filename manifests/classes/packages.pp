@@ -1,6 +1,13 @@
 class puppetmaster::packages {
-  package {
+  @package {
     'puppetmaster':
-      name => 'puppet-server';
+      name => $::operatingsystem ? {
+        default => 'puppet-server',
+        archlinux => undef,
+      };
+  }
+
+  if $::operatingsystem != 'archlinux' {
+    realize(Package['puppetmaster'])
   }
 }
