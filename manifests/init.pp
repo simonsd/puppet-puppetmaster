@@ -1,6 +1,8 @@
 import 'classes/*.pp'
 
-class puppetmaster {
+class puppetmaster (
+  $autosign = 'no'
+){
   include puppet
  
   class {
