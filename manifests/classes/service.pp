@@ -10,6 +10,7 @@ class puppetmaster::service {
       path => $::operatingsystem ? {
         default => undef,
         archlinux => '/etc/rc.d',
-      };
+      },
+      require => Class['puppetmaster::config'];
   }
 }

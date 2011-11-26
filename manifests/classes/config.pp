@@ -11,7 +11,9 @@ class puppetmaster::config {
     '/etc/puppet/puppet.conf-puppetmaster':
       target => '/etc/puppet/puppet.conf',
       order => '30',
-      content => template('puppetmaster/puppet.conf-puppetmaster.erb');
+      notify => Service['puppetmaster'],
+      content => template('puppetmaster/puppet.conf-puppetmaster.erb'),
+      require => Class['puppetmaster::packages'];
   }
 
   if $puppetmaster::autosign == 'yes' {
