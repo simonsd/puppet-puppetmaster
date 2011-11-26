@@ -7,6 +7,13 @@ class puppetmaster::config {
       content => template('puppetmaster/autosign.conf.erb');
   }
 
+  concat::fragment {
+    '/etc/puppet/puppet.conf-puppetmaster':
+      target => '/etc/puppet/puppet.conf',
+      order => '30',
+      content => template('puppetmaster/puppet.conf-puppetmaster.erb');
+  }
+
   if $puppetmaster::autosign == 'yes' {
     realize(File['/etc/puppet/autosign.conf'])
   }
