@@ -34,4 +34,9 @@ class puppetmaster::config {
         host => "${puppetmaster::dbhost}";
     }
   }
+
+  iptables::rule {
+    'puppetmaster':
+      dport => '8140';
+  }
 }

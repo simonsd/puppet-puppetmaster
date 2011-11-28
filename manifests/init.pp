@@ -12,6 +12,7 @@ class puppetmaster (
   $autosign = 'no'
 ){
   include puppet
+  include iptables
   include repos
  
   class {
