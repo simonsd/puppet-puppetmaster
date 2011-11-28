@@ -9,7 +9,7 @@ class puppetmaster (
   $dbrootpw,
   $dbsocket = '/var/run/mysqld/mysqld.sock',
   $storeconfigs = 'false',
-  $autosign = 'no'
+  $autosign = 'false'
 ){
   include '::puppet'
   include '::iptables'
