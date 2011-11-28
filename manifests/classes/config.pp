@@ -19,4 +19,19 @@ class puppetmaster::config {
   if $puppetmaster::autosign == 'yes' {
     realize(File['/etc/puppet/autosign.conf'])
   }
+
+  if $puppetmaster::storeconfigs == 'yes' {
+    mysql_db {
+      "${puppetmaster::dbname}":
+        user => "${puppetmaster::dbuser}",
+        host => "${puppetmaster::dbhost}",
+        require => Mysql_user["${puppetmaster::dbuser}"];
+    }
+
+    mysql_user {
+      "${puppetmaster::dbuser}":
+        pass => "${puppetmaster::dbpassword}",
+        host => "${puppetmaster::dbhost}";
+    }
+  }
 }
