@@ -12,8 +12,10 @@ class puppetmaster (
   $autosign = 'no'
 ){
   include puppet
+  include repos
  
   class {
+    'puppetmaster::repos':;
     'puppetmaster::packages':;
     'puppetmaster::config':;
     'puppetmaster::service':;
