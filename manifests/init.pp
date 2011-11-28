@@ -11,9 +11,9 @@ class puppetmaster (
   $storeconfigs = 'false',
   $autosign = 'no'
 ){
-  include puppet
-  include iptables
-  include repos
+  include '::puppet'
+  include '::iptables'
+  include '::repos'
  
   class {
     'puppetmaster::repos':;
