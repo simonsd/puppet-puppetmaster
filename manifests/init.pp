@@ -17,9 +17,12 @@ class puppetmaster (
  
   class {
     'puppetmaster::repos':;
-    'puppetmaster::packages':;
-    'puppetmaster::config':;
-    'puppetmaster::service':;
+    'puppetmaster::packages':
+      require => Class['puppetmaster::repos'];
+    'puppetmaster::config':
+      require => Class['puppetmaster::packages'];
+    'puppetmaster::service':
+      require => Class['puppetmaster::config'];
   }
 
   if $puppetmaster::storeconfigs == 'true' {
