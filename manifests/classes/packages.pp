@@ -10,4 +10,12 @@ class puppetmaster::packages {
   if $::operatingsystem != 'archlinux' {
     realize(Package['puppetmaster'])
   }
+
+  package {
+    'rubygem-mysql':
+      name => $::operatingsystem ? {
+        default => 'ruby-mysql',
+        archlinux => 'mysql-ruby',
+      };
+  }
 }
