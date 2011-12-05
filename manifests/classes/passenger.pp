@@ -8,7 +8,7 @@ class puppetmaster::passenger {
   }
 
   file {
-    "/etc/httpd/conf.d/passenger.conf":
+    "/etc/httpd/conf.d/puppetmaster.conf":
       content => template('puppetmaster/puppetmaster_apache.conf.erb'),
       notify => Service[$webserver];
   }
