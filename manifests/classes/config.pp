@@ -21,6 +21,11 @@ class puppetmaster::config {
   }
 
   if $puppetmaster::storeconfigs == 'true' {
+    class {
+      "${puppetmaster::dbadapter}":
+        rootpass => "${puppetmaster::dbrootpw}";
+    }
+
     mysql_db {
       "${puppetmaster::dbname}":
         user => "${puppetmaster::dbuser}",

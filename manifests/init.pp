@@ -32,11 +32,4 @@ class puppetmaster (
     'puppetmaster::service':
       require => Class['puppetmaster::config'];
   }
-
-  if $puppetmaster::storeconfigs == 'true' {
-    class {
-      "${puppetmaster::dbadapter}":
-        rootpass => "${puppetmaster::dbrootpw}";
-    }
-  }
 }
