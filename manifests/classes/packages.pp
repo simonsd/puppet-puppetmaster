@@ -18,6 +18,8 @@ class puppetmaster::packages {
         archlinux => 'mysql-ruby',
       };
     'activerecord':
+# anything higher causes 'stack level too deep' errors on a puppetmaster. confirmed bug.
+      ensure => '3.0.10',
       provider => gem;
   }
 }
