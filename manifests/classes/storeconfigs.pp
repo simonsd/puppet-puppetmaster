@@ -1,3 +1,4 @@
+class puppetmaster::storeconfigs {
   if $puppetmaster::storeconfigs == 'true' {
     class {
       "${puppetmaster::dbadapter}":
