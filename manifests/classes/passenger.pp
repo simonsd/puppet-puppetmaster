@@ -1,7 +1,10 @@
 class puppetmaster::passenger {
   if $puppetmaster::frontend == 'passenger' {
     class {
-      '::passenger':;
+      '::apache':
+        devel => yes;
+      '::passenger':
+        require => Class['apache'];
     }
 
     package {
