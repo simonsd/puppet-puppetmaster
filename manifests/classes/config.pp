@@ -43,9 +43,9 @@ class puppetmaster::config {
   openssl::certificate::x509 {
     'puppetmaster':
       commonname => "${puppetmaster::cert_commonname}",
-      altnames => ${"puppetmaster::cert_altnames}",
+      altnames => "${puppetmaster::cert_altnames}",
       country => "${puppetmaster::cert_country}",
-      organisation => "${puppetmaster:cert_organisation}",
+      organisation => "${puppetmaster::cert_organisation}",
       base_dir => "${puppetmaster::cert_basedir}",
       owner => "${puppetmaster::cert_owner}";
   }
