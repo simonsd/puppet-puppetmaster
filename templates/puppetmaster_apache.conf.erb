@@ -6,7 +6,7 @@ Listen 8140
     SSLCertificateChainFile /var/lib/puppet/ssl/ca/ca_crt.pem
     SSLCACertificateFile    /var/lib/puppet/ssl/ca/ca_crt.pem
     # CRL checking should be enabled; if you have problems with Apache complaining about the CRL, disable the next line
-    SSLCARevocationFile     /var/lib/puppet-server/ssl/ca/ca_crl.pem
+    SSLCARevocationFile     /var/lib/puppet/ssl/ca/ca_crl.pem
     SSLCipherSuite SSLv2:-LOW:-EXPORT:RC4+RSA
     SSLVerifyClient optional
     SSLVerifyDepth  1
