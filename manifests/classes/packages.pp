@@ -17,5 +17,7 @@ class puppetmaster::packages {
         default => 'ruby-mysql',
         archlinux => 'mysql-ruby',
       };
+    'activerecord':
+      provider => gem;
   }
 }
