@@ -11,6 +11,7 @@ class puppetmaster (
   $storeconfigs = 'false',
   $cert_commonname = 'puppetmaster',
   $cert_altnames = [],
+  $cert_organisation,
   $cert_country,
   $cert_basedir = '/var/lib/puppet/ssl',
   $cert_owner = 'puppet',
