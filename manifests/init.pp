@@ -37,6 +37,8 @@ class puppetmaster (
       require => Class['puppetmaster::storeconfigs'];
     'puppetmaster::config':
       require => Class['puppetmaster::environments'];
+    'puppetmaster::passenger':
+      require => Class['puppetmaster::config'];
     'puppetmaster::service':
       require => Class['puppetmaster::config'];
   }
