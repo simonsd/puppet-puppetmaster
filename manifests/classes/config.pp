@@ -16,11 +16,11 @@ class puppetmaster::config {
       require => Class['puppetmaster::packages'];
   }
 
-  if $puppetmaster::autosign == 'yes' {
+  if $puppetmaster::autosign == 'true' {
     realize(File['/etc/puppet/autosign.conf'])
   }
 
-  if $puppetmaster::storeconfigs == 'yes' {
+  if $puppetmaster::storeconfigs == 'true' {
     mysql_db {
       "${puppetmaster::dbname}":
         user => "${puppetmaster::dbuser}",
