@@ -32,8 +32,10 @@ class puppetmaster (
       require => Class['puppetmaster::repos'];
     'puppetmaster::storeconfigs':
       require => Class['puppetmaster::packages'];
-    'puppetmaster::config':
+    'puppetmaster::environments':
       require => Class['puppetmaster::storeconfigs'];
+    'puppetmaster::config':
+      require => Class['puppetmaster::environments'];
     'puppetmaster::service':
       require => Class['puppetmaster::config'];
   }
