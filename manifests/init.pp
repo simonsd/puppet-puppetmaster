@@ -7,7 +7,10 @@ class puppetmaster (
   $dbhost = 'localhost',
   $dbadapter = 'mysql',
   $dbrootpw,
-  $dbsocket = '/var/run/mysqld/mysqld.sock',
+  $dbsocket = $::operatingsystem ? {
+    default => '/var/lib/mysql/mysql.sock',
+    archlinux => '/var/run/mysqld/mysqld.sock',
+  },
   $storeconfigs = 'false',
   $cert_commonname = 'puppetmaster',
   $cert_altnames = [],
