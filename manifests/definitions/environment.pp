@@ -30,7 +30,7 @@ define puppetmaster::environment (
     case $provider {
       'git': {
         exec {
-          "git clone ${url} ${branch} ${basedir}/${name}",
+          "git clone ${url} ${branch} ${basedir}/${name}":
             before => File["${basedir}/${name}"];
         }
       }
