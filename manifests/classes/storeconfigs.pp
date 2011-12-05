@@ -18,3 +18,4 @@ class puppetmaster::storeconfigs {
         host => "${puppetmaster::dbhost}";
     }
   }
+}
