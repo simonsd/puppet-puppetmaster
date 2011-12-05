@@ -19,6 +19,7 @@ class puppetmaster (
   $cert_country,
   $cert_basedir = '/var/lib/puppet/ssl',
   $cert_owner = 'puppet',
+  $frontend = '',
   $autosign = 'false'
 ){
   include '::puppet'

@@ -1,8 +1,14 @@
 class puppetmaster::service {
   service {
     'puppetmaster':
-      ensure => running,
-      enable => true,
+      ensure => $puppetmaster::frontend ? {
+        default => running,
+        passenger => stopped,
+      },
+      enable => $puppetmaster::frontend ? {
+        default => true,
+        passenger => false,
+      },
       hasstatus => $::operatingsystem ? {
         default => undef,
         archlinux => false,
