@@ -13,6 +13,7 @@ class puppetmaster (
     archlinux => '/var/run/mysqld/mysqld.sock',
   },
   $storeconfigs = 'false',
+  $environments = 'false',
   $cert_commonname = 'puppetmaster',
   $cert_altnames = [],
   $cert_organisation,

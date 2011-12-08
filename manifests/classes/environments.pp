@@ -1,14 +1,16 @@
 class puppetmaster::environments {
-  file {
-    '/etc/puppet/environments':
-      ensure => directory,
-      owner => root,
-      group => root,
-      mode => 0644;
-  }
+  if $puppetmaster::environments == 'true' {
+    file {
+      '/etc/puppet/environments':
+        ensure => directory,
+        owner => root,
+        group => root,
+        mode => 0644;
+    }
 
-  puppetmaster::environment {
-    'production':;
-    'development':;
+    puppetmaster::environment {
+      'production':;
+      'development':;
+    }
   }
 }
