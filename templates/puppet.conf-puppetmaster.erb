@@ -1,8 +1,4 @@
 [master]
-  environment = production
-  manifest = environments/$environment/manifests/site.pp
-  modulepath = environments/$environment/modules
-
   storeconfigs = <%= scope.lookupvar('puppetmaster::storeconfigs') %>
   dbadapter = <%= scope.lookupvar('puppetmaster::dbadapter') %>
   dbuser = <%= scope.lookupvar('puppetmaster::dbuser') %>
