@@ -25,4 +25,11 @@ Listen 8140
         Order allow,deny
         allow from all
     </Directory>
+
+    # some passenger optimizations
+    PassengerMaxRequests 10000
+    PassengerPoolIdleTime 300
+    PassengerMaxPoolSize 50       # might want to adjust this to fit your amount of clients
+    PassengerUseGlobalQueue on
+    PassengerHighPerformance on
 </VirtualHost>
